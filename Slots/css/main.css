@@ -1,0 +1,129 @@
+﻿/* body styling */
+body {
+    background-image: url(../img/machine.png);
+    background-repeat: no-repeat;
+    background-color: #000000;
+    color: red;
+}
+
+/* player stats styling */
+ul#playerStats {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+}
+
+/********************************Buttons****************************************/
+div#spinButton {
+    position: absolute;
+    left: 303px;
+    top: 760px;
+
+}
+
+div#resetButton {
+    position: absolute;
+    left: 50px;
+    top: 760px;
+
+}
+
+div#exitButton {
+    position: absolute;
+    left: 555px;
+    top: 760px;
+
+}
+/*******************************************************************************/
+
+/*******************************Statistics**************************************/
+li#jackpot {
+    position: absolute;
+    left: 309px;
+    top: 614px;
+    color: red;
+    text-align: center;
+    width: 203px;
+
+}
+
+li#playerMoney {
+    position: absolute;
+    left: 60px;
+    top: 690px;
+    width: 150px;
+    text-align: center;
+
+}
+
+/* player stats header */
+h2 {
+    position: absolute;
+    top: 871px;
+    left: 12px;
+}
+
+li#playerTurn {
+    position: absolute;
+    top: 900px;
+    left: 300px;
+}
+
+li#playerWins {
+    position: absolute;
+    top: 900px;
+    left: 400px;
+}
+
+li#playerLosses {
+    position: absolute;
+    top: 900px;
+    left: 500px;
+}
+
+li#playerWinRatio {
+    position: absolute;
+    top: 900px;
+    left: 610px;
+}
+
+div#betEntry {
+    position: absolute;
+    left: 336px;
+    top: 690px;
+
+}
+
+div#winOrLose {
+    margin: 0;
+    position: absolute;
+    width: 150px;
+    text-align: center;
+    left: 610px;
+    top: 676px;
+}
+
+input#playerBet {
+    background: transparent;
+    border: 0;
+    text-align: center;
+    width: 150px;
+    color: red;
+
+}
+/*******************************************************************************/
+
+/* Reel() Images */
+div#result {
+    position: absolute;
+    left: 60px;
+    top: 295px;
+    border: none;
+}
+
+/* specific styling for each Reel() image */
+div#result img {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
