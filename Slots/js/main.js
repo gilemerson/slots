@@ -1,11 +1,13 @@
-﻿// Filename: Slots
+﻿/// <reference path="jquery.js" />
+
+// Filename: Slots
 // Author: Gil Emerson
 // Due Date : Oct 31, 2014
 // Description: Overview:	Use	your	accumulated	knowledge	of	the	JavaScript	and	Web	technologies	and	the	slot	
                 //machine	code	(provided	on	GitHub	as	a	template)	and	the	Web	API	of	your	choice	to	create	a	HTML5	
                 // Slot	Machine	game.		
 
-/// <reference path="jquery.js" />
+
 
 // Tally
 var playerMoney = 1000;
@@ -70,7 +72,7 @@ function checkJackPot() {
     var jackPotWin = Math.floor(Math.random() * 51 + 1);
     if (jackPotTry == jackPotWin) {
         jackpotSound.play();
-        alert("You Won the " + jackpot + " Credit Jackpot!!");
+        alert("You Won " + jackpot + " Credit Jackpot!!");
         playerMoney += jackpot;
         jackpot = 1000;
     }
@@ -233,29 +235,24 @@ $("#spinButton").click(function () {
     playerBet = $("div#betEntry>input").val();
 
     if (playerMoney == 0) {
-        loseSound.play();
         if (confirm("You ran out of Money! \nDo you want to play again?")) {
             resetAll();
             showPlayerStats();
         }
     }
     else if (playerBet > playerMoney) {
-        problemSound.play();
         alert("You don't have enough Money to place that bet.");
     }
     else if (playerBet <= 0) {
-        problemSound.play();
         alert("All bets must be a positive amount.");
     }
     else if (playerBet <= playerMoney) {
-        spinSound.play();
         spinResult = Reels();
         determineWinnings();
         turn++;
         showPlayerStats();
     }
     else {
-        problemSound.play();
         alert("Please enter a valid bet amount");
     }
 
