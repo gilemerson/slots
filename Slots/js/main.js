@@ -1,14 +1,11 @@
-﻿// Source Filename: Slots
+﻿// Filename: Slots
 // Author: Gil Emerson
 // Due Date : Oct 31, 2014
 // Description: Overview:	Use	your	accumulated	knowledge	of	the	JavaScript	and	Web	technologies	and	the	slot	
                 //machine	code	(provided	on	GitHub	as	a	template)	and	the	Web	API	of	your	choice	to	create	a	HTML5	
-                // Slot	Machine	game.		 
-
+                // Slot	Machine	game.		
 
 /// <reference path="jquery.js" />
-
-
 
 // Tally
 var playerMoney = 1000;
