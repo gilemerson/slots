@@ -1,4 +1,4 @@
-﻿/* body styling */
+﻿/* body */
 body {
     background-image: url(../img/machine.png);
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@ ul#playerStats {
     margin: 5px;
 }
 
-/********************************Buttons****************************************/
+/*Buttons */
 div#spinButton {
     position: absolute;
     left: 303px;
@@ -34,9 +34,9 @@ div#exitButton {
     top: 760px;
 
 }
-/*******************************************************************************/
 
-/*******************************Statistics**************************************/
+
+/* Statistics */
 li#jackpot {
     position: absolute;
     left: 309px;
@@ -111,7 +111,7 @@ input#playerBet {
     color: red;
 
 }
-/*******************************************************************************/
+
 
 /* Reel() Images */
 div#result {

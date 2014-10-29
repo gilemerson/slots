@@ -1,12 +1,14 @@
 ﻿// Source Filename: Slots
 // Author: Gil Emerson
-// Date last Modified: Oct 21, 2014
-// Description: 
+// Due Date : Oct 31, 2014
+// Description: Overview:	Use	your	accumulated	knowledge	of	the	JavaScript	and	Web	technologies	and	the	slot	
+                //machine	code	(provided	on	GitHub	as	a	template)	and	the	Web	API	of	your	choice	to	create	a	HTML5	
+                // Slot	Machine	game.		 
 
 
 /// <reference path="jquery.js" />
 
-intro.play();
+
 
 // Tally
 var playerMoney = 1000;
@@ -29,7 +31,7 @@ var blanks = 0;
 
 
 
-/* Utility function to show Player Stats */
+/* Show Player Stats */
 function showPlayerStats() {
     winRatio = winNumber / turn;
     $("#jackpot").text(jackpot);
@@ -40,7 +42,7 @@ function showPlayerStats() {
     $("#playerWinRatio").text("Win Ratio: " + (winRatio * 100).toFixed(2) + " percent"); /* the percent sign is missing from this custom font... */
 }
 
-/* Utility function to reset all fruit tallies */
+/* Reset all fruit tallies */
 function resetTally() {
     bananas = 0;
     bars = 0;
@@ -52,7 +54,7 @@ function resetTally() {
     blanks = 0;
 }
 
-/* Utility function to reset the player stats */
+/* Reset the player stats */
 function resetAll() {
     playerMoney = 1000;
     winnings = 0;
@@ -77,7 +79,7 @@ function checkJackPot() {
     }
 }
 
-/* Utility function to show a win message and increase player money */
+/* Show a win message and increase player money */
 function showWinMessage() {
     playerMoney += winnings;
     $("div#winOrLose>p").text(winnings + " Credits!");
@@ -86,7 +88,7 @@ function showWinMessage() {
 }
 
 
-/* Utility function to show a loss message and reduce player money */
+/* Show a loss message and reduce player money */
 function showLossMessage() {
     playerMoney -= playerBet;
     jackpot += +playerBet;  //player loss is added to jackpot
@@ -94,7 +96,7 @@ function showLossMessage() {
     resetTally();
 }
 
-/* Utility function to check if a value falls within a range of bounds */
+/* Check if a value falls within a range of bounds */
 function checkRange(value, lowerBounds, upperBounds) {
     if (value >= lowerBounds && value <= upperBounds) {
         return value;
@@ -104,7 +106,7 @@ function checkRange(value, lowerBounds, upperBounds) {
     }
 }
 
-/* When this function is called it determines the betLine results and displays the associated images. */
+/* When called this determines the betLine results and displays the associated images. */
 function Reels() {
     var betLine = [];
     var myImg;
@@ -168,7 +170,7 @@ function Reels() {
     return betLine;
 }
 
-/* This function calculates the player's winnings, if any */
+/* Calculates the player's winnings, if any */
 function determineWinnings() {
     if (blanks == 0) {
         if (bananas == 3) {
@@ -229,7 +231,7 @@ function determineWinnings() {
 
 }
 
-/* When the player clicks the spin button the game kicks off */
+/* When the player clicks the spin button the game starts */
 $("#spinButton").click(function () {
     playerBet = $("div#betEntry>input").val();
 
@@ -246,7 +248,7 @@ $("#spinButton").click(function () {
     }
     else if (playerBet <= 0) {
         problemSound.play();
-        alert("All bets must be a positive $ amount.");
+        alert("All bets must be a positive amount.");
     }
     else if (playerBet <= playerMoney) {
         spinSound.play();
@@ -262,7 +264,7 @@ $("#spinButton").click(function () {
 
 });
 
-/* When the reset button is clicked, game statitstics return to default values. User must confirm */
+/* When the reset button is clicked, game statitstics return to default values */
 $("#resetButton").click(function () {
     if (confirm("Are you sure you want to reset? \nAll stats will be lost!")) {
         resetAll();
@@ -270,7 +272,7 @@ $("#resetButton").click(function () {
     }
 });
 
-/* When the exit button is clicked, the slot machine tab is closed. User must confirm */
+/* When the exit button is clicked, the slot machine tab is closed */
 $("#exitButton").click(function () {
     if (confirm("Are you sure you want to exit?")) {
         close();
