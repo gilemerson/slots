@@ -14,21 +14,21 @@ ul#playerStats {
 }
 
 /*Buttons */
-div#spinButton {
+button#spinButton {
     position: absolute;
     left: 303px;
     top: 760px;
 
 }
 
-div#resetButton {
+button#resetButton {
     position: absolute;
     left: 50px;
     top: 760px;
 
 }
 
-div#exitButton {
+button#exitButton {
     position: absolute;
     left: 555px;
     top: 760px;
@@ -36,7 +36,7 @@ div#exitButton {
 }
 
 
-/* Statistics */
+/*Statistics */
 li#jackpot {
     position: absolute;
     left: 309px;
@@ -111,7 +111,7 @@ input#playerBet {
     color: red;
 
 }
-
+/*******************************************************************************/
 
 /* Reel() Images */
 div#result {
