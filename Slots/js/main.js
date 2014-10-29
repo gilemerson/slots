@@ -13,7 +13,7 @@
 // Tally
 var playerMoney = 1000;
 var winnings = 0;
-var jackpot = 55000;
+var jackpot = 5000;
 var turn = 0;
 var playerBet = 0;
 var winNumber = 0;
@@ -82,7 +82,7 @@ function checkJackPot() {
 /* Show a win message and increase player money */
 function showWinMessage() {
     playerMoney += winnings;
-    $("div#winOrLose>p").text(winnings + " Credits!");
+    $("div#winOrLose").text(winnings + " Credits!");
     resetTally();
     checkJackPot();
 }
