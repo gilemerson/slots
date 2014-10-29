@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
+<!--Language-->
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Casino</title>
     <!--CSS-->
     <link href="css/main.css" rel="stylesheet" />
-
 </head>
 <body>
     <div>
         <div>
-            <!-- Statistics -->
+       <!-- Statistics -->
             <h2>Player Statistics: </h2>
             <ul id="playerStats">
                 <li id="jackpot">5000</li>
@@ -18,35 +18,36 @@
                 <li id="playerTurn">Turn: 0</li>
                 <li id="playerWins">Wins: 0</li>
                 <li id="playerLosses">Losses: 0</li>
-                <li id="playerWinRatio">Win Ratio: 0.00 percent</li> <!-- the percent sign is missing from this custom font... -->
+                <li id="playerWinRatio">Win Ratio: 0.00 percent</li> 
             </ul>
         </div>
-        <!-- Bet entry input box -->
+
+        <!-- Bet entry input textbox -->
         <div id="betEntry">
             <input id="playerBet" name="points" value="10">
         </div>
-        <!-- buttons (spin, reset, exit) -->
+
+        <!-- Buttons: Spin, Reset & Exit) -->
         <button id="spinButton"><img src="img/spinButton.png" /></button>
         <button id="resetButton"><img src="img/resetButton.png" /></button>
         <button id="exitButton"><img src="img/exitButton.png" /></button>
     </div>
-    <!--Shows appropriate image based on spin result. Default set to blankImage -->
+
+    <!--Shows image based on spin results. Default image set to blankImage -->
     <div id="result">
         <img id="resultImg0" src="img/blankImage.png" width="220" height="238" />
         <img id="resultImg1" src="img/blankImage.png" width="220" height="238" />
         <img id="resultImg2" src="img/blankImage.png" width="220" height="238" />
     </div>
-    <!-- Win/Loss text -->
+
+    <!-- Win OR Loss text -->
     <div id="winOrLose">
-        <p></p>
+
     </div>
 
-
-        <!--JavaScript-->
+    <!--JavaScript-->
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
-   
-    
-        
+
 </body>
 </html>
