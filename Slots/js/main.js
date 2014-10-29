@@ -1,13 +1,15 @@
 ﻿/// <reference path="jquery.js" />
 
-// Filename: Slots
-// Author: Gil Emerson
-// Due Date : Oct 31, 2014
-// Description: Overview:	Use	your	accumulated	knowledge	of	the	JavaScript	and	Web	technologies	and	the	slot	
-                //machine	code	(provided	on	GitHub	as	a	template)	and	the	Web	API	of	your	choice	to	create	a	HTML5	
-                // Slot	Machine	game.		
 
-
+//File Name: Slots
+//Author: Gil Emerson
+//Last Modified By: Gil Emerson
+//Last Modified: October 29th 2014
+//Due Date : October 31, 2014 - 11:59pm
+//Revision: Version #3
+//Description: Overview:   Use	your accumulated knowledge of the JavaScript and Web technologies and the slot
+                           //machine code (provided on	GitHub as a	template) and the Web API of your choice to	create a HTML5
+                           //Slot	Machine	game.
 
 // Tally
 var playerMoney = 1000;
@@ -30,7 +32,7 @@ var blanks = 0;
 
 
 
-/* Show Player Stats */
+// Show Player Stats 
 function showPlayerStats() {
     winRatio = winNumber / turn;
     $("#jackpot").text(jackpot);
@@ -41,7 +43,7 @@ function showPlayerStats() {
     $("#playerWinRatio").text("Win Ratio: " + (winRatio * 100).toFixed(2) + " percent"); /* the percent sign is missing from this custom font... */
 }
 
-/* Reset all fruit tallies */
+// Reset the fruit tally
 function resetTally() {
     bananas = 0;
     bars = 0;
@@ -53,7 +55,7 @@ function resetTally() {
     blanks = 0;
 }
 
-/* Reset the player stats */
+// Reset the player stats 
 function resetAll() {
     playerMoney = 1000;
     winnings = 0;
@@ -65,9 +67,10 @@ function resetAll() {
     winRatio = 0;
 }
 
-/* Check to see if the player won the jackpot */
+// Check to see if the player won the jackpot 
 function checkJackPot() {
-    /* compare two random values */
+
+    // Compare two 'random' values 
     var jackPotTry = Math.floor(Math.random() * 51 + 1);
     var jackPotWin = Math.floor(Math.random() * 51 + 1);
     if (jackPotTry == jackPotWin) {
@@ -78,7 +81,7 @@ function checkJackPot() {
     }
 }
 
-/* Show a win message and increase player money */
+// Show a win message and increase the players money 
 function showWinMessage() {
     playerMoney += winnings;
     $("div#winOrLose").text(winnings + " Credits!");
@@ -87,7 +90,7 @@ function showWinMessage() {
 }
 
 
-/* Show a loss message and reduce player money */
+// Show a loss message and reduce player money 
 function showLossMessage() {
     playerMoney -= playerBet;
     jackpot += +playerBet;  //player loss is added to jackpot
@@ -95,7 +98,7 @@ function showLossMessage() {
     resetTally();
 }
 
-/* Check if a value falls within a range of bounds */
+// Check if a value falls within a range of bounds
 function checkRange(value, lowerBounds, upperBounds) {
     if (value >= lowerBounds && value <= upperBounds) {
         return value;
@@ -105,7 +108,7 @@ function checkRange(value, lowerBounds, upperBounds) {
     }
 }
 
-/* When called this determines the betLine results and displays the associated images. */
+// When called this determines the betLine results and displays the images. 
 function Reels() {
     var betLine = [];
     var myImg;
@@ -169,7 +172,7 @@ function Reels() {
     return betLine;
 }
 
-/* Calculates the player's winnings, if any */
+// Calculates the player's winnings, if any 
 function determineWinnings() {
     if (blanks == 0) {
         if (bananas == 3) {
@@ -227,10 +230,9 @@ function determineWinnings() {
         lossNumber++;
         showLossMessage();
     }
-
 }
 
-/* When the player clicks the spin button the game starts */
+// When the player clicks the spin button the game starts 
 $("#spinButton").click(function () {
     playerBet = $("div#betEntry>input").val();
 
@@ -258,7 +260,7 @@ $("#spinButton").click(function () {
 
 });
 
-/* When the reset button is clicked, game statitstics return to default values */
+// When the reset button is clicked, game statitstics return to default values 
 $("#resetButton").click(function () {
     if (confirm("Are you sure you want to reset? \nAll stats will be lost!")) {
         resetAll();
@@ -266,7 +268,7 @@ $("#resetButton").click(function () {
     }
 });
 
-/* When the exit button is clicked, the slot machine tab is closed */
+// When the exit button is clicked, the slot machine is closed 
 $("#exitButton").click(function () {
     if (confirm("Are you sure you want to exit?")) {
         close();

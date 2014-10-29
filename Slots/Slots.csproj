@@ -73,7 +73,9 @@
     <Content Include="img\cherries.jpg" />
     <Content Include="img\exitButton.png" />
     <Content Include="img\grapes.jpg" />
-    <Content Include="img\machine.png" />
+    <Content Include="..\..\..\..\Pictures\machine.png">
+      <Link>img\machine.png</Link>
+    </Content>
     <Content Include="img\oranges.jpg" />
     <Content Include="img\resetButton.png" />
     <Content Include="img\seven.jpg" />
