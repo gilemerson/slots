@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Casino</title>
+    <!--CSS-->
+    <link href="css/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div>
+        <div>
+            <!-- Statistics -->
+            <h2>Player Statistics: </h2>
+            <ul id="playerStats">
+                <li id="jackpot">5000</li>
+                <li id="playerMoney">1000</li>
+                <li id="playerTurn">Turn: 0</li>
+                <li id="playerWins">Wins: 0</li>
+                <li id="playerLosses">Losses: 0</li>
+                <li id="playerWinRatio">Win Ratio: 0.00 percent</li> <!-- the percent sign is missing from this custom font... -->
+            </ul>
+        </div>
+        <!-- Bet entry input box -->
+        <div id="betEntry">
+            <input id="playerBet" name="points" value="10">
+        </div>
+        <!-- buttons (spin, reset, exit) -->
+        <div id="spinButton"><img src="img/spinButton.png" /></div>
+        <div id="resetButton"><img src="img/resetButton.png" /></div>
+        <div id="exitButton"><img src="img/exitButton.png" /></div>
+    </div>
+    <!-- Reel images; Shows appropriate image based on spin result; Image sources are initialized to blankImage.png -->
+    <div id="result">
+        <img id="resultImg0" src="img/blankImage.png" width="220" height="238" />
+        <img id="resultImg1" src="img/blankImage.png" width="220" height="238" />
+        <img id="resultImg2" src="img/blankImage.png" width="220" height="238" />
+    </div>
+    <!-- Win/Loss text -->
+    <div id="winOrLose">
+        <p></p>
+    </div>
+
+
+        <!--JavaScript-->
+    <script src="js/main.js"></script>
+    <script src="js/jquery.js"></script>
+        
+</body>
+</html>
