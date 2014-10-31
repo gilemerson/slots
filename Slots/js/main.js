@@ -11,6 +11,7 @@
                            //machine code (provided on	GitHub as a	template) and the Web API of your choice to	create a HTML5
                            //Slot	Machine	game.
 
+
 // Tally
 var playerMoney = 1000;
 var winnings = 0;
@@ -74,7 +75,6 @@ function checkJackPot() {
     var jackPotTry = Math.floor(Math.random() * 51 + 1);
     var jackPotWin = Math.floor(Math.random() * 51 + 1);
     if (jackPotTry == jackPotWin) {
-        jackpotSound.play();
         alert("You Won " + jackpot + " Credit Jackpot!!");
         playerMoney += jackpot;
         jackpot = 1000;
@@ -177,51 +177,66 @@ function determineWinnings() {
     if (blanks == 0) {
         if (bananas == 3) {
             winnings = playerBet * 10;
+   
+
         }
         else if (bars == 3) {
             winnings = playerBet * 20;
+        
         }
         else if (bells == 3) {
             winnings = playerBet * 30;
+         
         }
         else if (cherries == 3) {
             winnings = playerBet * 40;
+      
         }
         else if (grapes == 3) {
             winnings = playerBet * 50;
+          
         }
         else if (oranges == 3) {
             winnings = playerBet * 75;
+           
         }
         else if (sevens == 3) {
             winnings = playerBet * 100;
+            winSnd.play();
         }
         else if (bananas == 2) {
             winnings = playerBet * 2;
+         
         }
         else if (bars == 2) {
             winnings = playerBet * 2;
         }
         else if (bells == 2) {
             winnings = playerBet * 3;
+            
         }
         else if (cherries == 2) {
             winnings = playerBet * 4;
+            winSnd.play();
         }
         else if (grapes == 2) {
             winnings = playerBet * 5;
+       
         }
         else if (oranges == 2) {
             winnings = playerBet * 10;
+      
         }
         else if (sevens == 2) {
             winnings = playerBet * 20;
         }
         else if (sevens == 1) {
             winnings = playerBet * 5;
+            winSnd.play();
         }
         else {
             winnings = playerBet * 1;
+        
         }
         winNumber++;
         showWinMessage();
@@ -229,6 +244,7 @@ function determineWinnings() {
     else {
         lossNumber++;
         showLossMessage();
+    
     }
 }
 
@@ -237,6 +253,7 @@ $("#spinButton").click(function () {
     playerBet = $("div#betEntry>input").val();
 
     if (playerMoney == 0) {
+        loseSnd.play();
         if (confirm("You ran out of Money! \nDo you want to play again?")) {
             resetAll();
             showPlayerStats();
@@ -265,12 +282,14 @@ $("#resetButton").click(function () {
     if (confirm("Are you sure you want to reset? \nAll stats will be lost!")) {
         resetAll();
         showPlayerStats();
+     
     }
 });
 
 // When the exit button is clicked, the slot machine is closed 
 $("#exitButton").click(function () {
     if (confirm("Are you sure you want to exit?")) {
+     
         close();
     }
 });

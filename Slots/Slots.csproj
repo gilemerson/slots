@@ -81,7 +81,6 @@
     <Content Include="img\seven.jpg" />
     <Content Include="img\spinButton.png" />
     <Content Include="index.html" />
-    <Content Include="js\easeljs-0.7.1.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\main.js" />
     <Content Include="packages.config" />
